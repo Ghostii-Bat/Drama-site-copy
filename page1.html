@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Change your site title: (It is shown in the tab) -->
+    <title>SWHS Drama Club</title>
+
+    <!-- Change your site description: (It is shown in Google results) -->
+    <meta content="SWHS Drama Club Website! all the info for future/past shows as well as our club members!" name="description" />
+
+    <!-- Setting character encoding and viewport size. Do not remove. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FavIcon (small image in tab), change to any image you want: -->
+    <link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpJPwnYvKvNxwSu0gCNCZ7Bs6iorTIZ9OpPQ&s" rel="icon" type="image/x-icon" />
+
+    <!-- CSS: -->
+    <!-- You will have to change this to "../style.css" if this HTML file is in a subfolder, to "../../style.css" if this HTML file is in 2 subfolders, etc. -->
+    <link href="./style2.css" rel="stylesheet" />
+    
+
+    <script>
+      // Template generated with petrapixel's layout generator.
+      // (Please do not remove this credit.)
+      console.log("%cTemplate generated with petrapixel's layout generator: https://petrapixel.neocities.org/coding/layout-generator", "font-size: 14pt; color: #922a45; background: #ffd3ef");
+    </script>
+  </head>
+  
+  <body style= "--border: 17px solid #FF70C6; background-image:url(https://img.magnific.com/premium-vector/vector-seamless-pattern-background-lips-print-wrapping-paper-cloth-world-kissing-day-valentines-day_965864-291.jpg);" >
+    <!-- The next line is a skip-to-content link for keyboard users. Do not remove it! -->
+    <a href="#content" id="skip-to-content-link">Skip to content</a>
+
+    <div class="layout">
+
+ <!-- =============================================== -->
+      <!-- LETTER -->
+ <!-- =============================================== -->
+<audio preload="auto" id="envelope-sound"></audio>
+
+<div id="chapter-12">
+	
+  <div class="trifold_letter" onclick="openAndTransitionLetter()">
+    <!-- Outer Interactive Envelope Cover -->
+    <div class="letter_cover">
+      <div class="letter_cover_text_top">SWHS Drama Club<br>161 Nevers Rd</div>
+      <div class="letter_cover_stamp"></div>
+      <div class="letter_cover_text">
+<p></p>
+<p></p>
+<p></p>
+!TOP SECRET: MUSICAL!
+<p></p>
+<p></p>
+<p></p>
+</div>
+    </div>
+    
+    <!-- Inside Stationery Content -->
+    <div class="letter_top">
+      <div class="letter_top_text">
+        <p><strong>On Wednesday's we wear PINK!</strong></p>
+        <p>THAT'S RIGHT, this year's musical is MEAN GIRLS!!</p>
+ <img class="image" alt="Mean Girls" src="https://cdn-media.threadless.com/challenges/meangirls_smallbanner.jpg" />
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="cinematic-words">
+  <div id="word-display">
+	<p></p>
+</div>
+</div>
+
+<script>
+function openAndTransitionLetter() {
+  const letter = document.querySelector('.trifold_letter');
+  const letterOverlay = document.getElementById('chapter-12');
+  const wordsOverlay = document.getElementById('cinematic-words');
+  const wordDisplay = document.getElementById('word-display');
+  const mainContent = document.getElementById('actual-webpage-content');
+  const hoverSound = document.getElementById('envelope-sound');
+
+  // Guard flag to prevent the function from running multiple times if hovered again
+  if (letter.classList.contains('letter-opened')) return;
+   // 2. Lock the letter component into its open visual state
+  letter.classList.add('letter-opened');
+
+  // 3. Wait 5 seconds, then make the letter vanish and start the words sequence
+	 if (hoverSound) {
+    hoverSound.currentTime = 0;
+    hoverSound.play().catch(e => console.log(e));
+  }
+
+
+  setTimeout(() => {
+    letterOverlay.style.opacity = '0';
+    letterOverlay.style.visibility = 'hidden';
+
+    // Show the cinematic words backdrop canvas container
+    wordsOverlay.style.visibility = 'visible';
+    wordsOverlay.style.opacity = '1';
+
+    // Define the sequence of words or sentences you want to appear on screen
+    const textSequence = [
+      "On Wednesday's we wear Pink!",
+      "Yes, Regina (My name is Karen)",
+      "No, Regina, every waking hour (here's where you belong)",
+	"I spend making sure Regina (my hair is shiny)",
+	"George can stay in power (here's where you belong)",
+    ];
+
+    runTextSequence(textSequence, 0, wordDisplay, () => {
+      // 4. This block triggers ONLY after the entire array sequence finishes
+      wordsOverlay.style.opacity = '0';
+      wordsOverlay.style.visibility = 'hidden';
+
+      // Reveal the true final main website layout safely
+      mainContent.style.visibility = 'visible';
+      mainContent.style.opacity = '1';
+    });
+
+  }, 3400); // Time (ms) the letter remains open before fading out
+}
+
+// Helper function to handle individual text element transitions sequentially
+function runTextSequence(array, index, displayElement, onComplete) {
+  if (index >= array.length) {
+    onComplete(); // Exit the recursion sequence loop cleanly
+    return;
+  }
+
+  // Set the text content for the current step
+  displayElement.textContent = array[index];
+  
+  // Fade text in
+  setTimeout(() => {
+    displayElement.classList.add('visible');
+  }, 100);
+
+  // Leave text visible for 2 seconds, then fade out
+  setTimeout(() => {
+    displayElement.classList.remove('visible');
+    
+    // Wait for the fade-out transition to complete (800ms) before changing to next word
+    setTimeout(() => {
+      runTextSequence(array, index + 1, displayElement, onComplete);
+    }, 800);
+
+  }, 800); // Time (ms) each individual phrase stays fully legible on the screen
+}
+</script>
+
+ <!-- =============================================== -->
+      <!-- HEADER -->
+      <!-- =============================================== -->
+
+      <header>
+
+        <div class="header-content">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpJPwnYvKvNxwSu0gCNCZ7Bs6iorTIZ9OpPQ&s" style="width: 10%; height: auto; border-radius: 50%;" alt="Description"> </a>
+	        <div class="header-title">SWHS Drama Club</div>
+	        
+	        <!-- NAVIGATION -->
+	        <nav>
+	          <ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="page1.html">Winter Musical</a></li>
+	            <li><a href="/page2">Spring Play</a></li>
+	            <li><a href="/page3">Unified Theater</a></li>
+	            <li><a href="https://myqrcode.mobi/c6b63a73">Tickets</a></li>
+	            <li>
+	                <strong>Submenu (hover to show | press and hold on Mobile)</strong>
+	                <ul>
+	                  <li><a href="/page-a">Puffs</a></li>
+	                  <li><a href="/page-b">Once Upon a Mattress</a></li>
+	                  <li><a href="/page-c">Radium Girls</a></li>
+	                  <li><a href="/page-d">Legally Blonde</a></li>
+	                  <li><a href="/page-e">Past Shows!</a></li>
+	                </ul>
+	            </li>
+	          </ul>
+	        </nav>
+        	
+        </div>
+      </header>
+
+
+
+      <!-- =============================================== -->
+        <!-- MAIN CONTENT -->
+        <!-- =============================================== -->
+
+<div class="layout no-sidebar">
+<main id="content">
+<h1>Mean Girls! (Nov. 2026)</h1>
+
+          <div class="two-columns">
+	          <div>
+	          	<p>Mean Girls is a musical that explores the harshest parts of High School! It's an exaggeration of an everyday high school experience dealing with tough themes such as hate,<a href="https://www.preventsuicidect.org/get-help/ct-988/#:~:text=In%20CT%2C%20call%20800%2DHOPE,or%20chat%20www.988lifeline.org"> suicide and bullying.</a></p>
+	          	<p>The musical depicts the character, Cady Heron, a 16 year old girl who was homeschooled in Africa before moving to Illinois and joining a public High School. </p>
+	          	<p>
+	          	Not only being a new girl but also new to the concept of a public High School, Cady meets nice friends but falls deep into toxic social circles after meeting <mark><b>“The Plastics”</b></mark> a group of girls who participate in gossip, bullying and being the popular queens of the school. 
+	          	</p>
+	          	<p>
+	          	Regina George is the leader of the plastics, and is known to be a ruthless gossip. She has destroyed the reputations of: Teachers, Students and Administrators all while maintaining her weight of 115 lbs.
+	          	</p>
+	          	<blockquote>
+            <p>
+        <a href="https://drive.google.com/open?id=1SNK1SHLBxrt48KwFWY3eM3eth0RhYAtLxl9g3jRG-Ao">Audition Form for Mean Girls</a>
+        </p>
+        <img src="https://i.imgur.com/sBBh67L.jpeg">
+        </blockquote>
+	          </div>
+	          <div>
+	            <blockquote>
+	          	<p>If you or anyone else you know is facing bullying, harassment or something of the kind contact the <mark><b>National Bullying Prevention</b></mark> Helpline by calling or texting <b>1-844-466-2855</b>, or the <mark><b>Crisis Text Line by texting HOME to 741741</b></mark>, to provide free confidential support for anyone dealing with bullying. 
+	          	</p>
+	          	<p>
+             Call or Text <b>988</b> for the <mark><b>Suicide & Crisis Lifeline.</b></mark>
+            Remember to always go to a trusted adult or your school counselor when dealing with bullying, harassment or abuse. Their job is literally to help you. 
+             </p>
+	          	</blockquote>
+	          	<p>Section by <mark><b>Nikshita Sree Ganesh Kumar (Guest Writer/Actor)</b></mark></p>
+	          	<p><iframe src="https://drive.google.com/file/d/1UERRUUnC4yEIs7u8ybDKA_VMySKTnRWt/preview" width="640" height="480"></iframe></p>
+	          </div>
+          </div>
+
+      </main>
+
+
+      <!-- =============================================== -->
+      <!-- FOOTER -->
+      <!-- =============================================== -->
+
+      <footer>
+            <div>Website Creator - Nikshita Sree Ganesh Kumar! :)<a href="/">Link.</a>      
+    <!-- Closing .layout: -->
+    </div>
+  </footer>
+    <!-- Add any additional Javascript code (<script></script>) here. -->
+  </body>
+  
+</html>
